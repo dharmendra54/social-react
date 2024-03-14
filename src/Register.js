@@ -1,10 +1,14 @@
 import React, { useContext } from 'react'
-import Home from './Home'
 import { UserContext } from './App1'
 import './Register.css'
 
 export default function Register() {
-    const {flag,setFlag}=useContext(UserContext);
+    const {flag,setFlag,user, setUser,setUsers}=useContext(UserContext);
+    const newUser = () =>{
+        setUsers((prev) => [...prev, user]);
+        setFlag(() => 2);
+    }
+    
   return (
     <>
         <div className='Register-model'>
@@ -13,10 +17,17 @@ export default function Register() {
                 <div className="Register-signup-title">Sign Up</div>
                 <div onClick={() => setFlag(() => 0)} className="close">&times;</div>
             </div>
-                <input type='text' placeholder='Enter Username'></input><br/><br/>
-                <input type='email' placeholder='Enter Email'></input><br/><br/>
-                <input type='password' placeholder=' Password'></input><br/><br/>
-                <button onClick={() => setFlag((prevState) => 2)}>Submit</button>
+                <input type='text' onChange={(e) =>
+              setUser((prev) => ({ ...prev, name: e.target.value }))
+            } placeholder='Enter Username'></input><br/><br/>
+                <input type='email'  onChange={(e) =>
+              setUser((prev) => ({ ...prev, email: e.target.value }))
+            } placeholder='Enter Email'></input><br/><br/>
+                <input type='password'
+            onChange={(e) =>
+              setUser((prev) => ({ ...prev, pass: e.target.value }))
+            } placeholder=' Password'></input><br/><br/>
+                <button onClick={newUser}>Submit</button>
             </div>
         </div>
     </>
