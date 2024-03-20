@@ -17,7 +17,7 @@ export default function Register() {
                 <div className="Register-signup-title">Sign Up</div>
                 <div onClick={() => setFlag(() => 0)} className="close">&times;</div>
             </div>
-                <input type='text' onChange={(e) =>
+                <input autoFocus type='text' onChange={(e) =>
               setUser((prev) => ({ ...prev, name: e.target.value }))
             } placeholder='Enter Username'></input><br/><br/>
                 <input type='email'  onChange={(e) =>

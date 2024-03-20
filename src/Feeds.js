@@ -26,6 +26,7 @@ export default function Feeds() {
        <p>Id: {elem.userId}</p>  
        <p>Title: {elem.title} </p>
         <p>Post: {elem.body}</p>
+        <button>Comments</button>
       </div>)}
     </div>
   );

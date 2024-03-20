@@ -17,10 +17,12 @@ export default function Home() {
       <Router>
        <Link to="/">Feeds</Link> | <Link to="/posts">Posts</Link>  | <Link to="/todos">Todos</Link>  | <Link to="/albums">Albums</Link>
         <Routes>
-            <Route path="/" element={<Feeds/>}></Route>
+            <Route path="/" index element={<Feeds/>}></Route>
             <Route path="/posts"  element={<Posts/>}></Route>
             <Route path="/albums" element={<Albums/>}></Route>
             <Route path="/todos"  element={<Todos/>}></Route>
+
+            
         </Routes>
       </Router>
     </div><br /> <br />
